@@ -20,14 +20,21 @@ void PrintArray (int[] array) // вывод элементов массива н
     {
         Console.Write ($"{item}, ");
     }
-     Console.Write ("\b\b]");
+    Console.Write ("\b\b]");
 }
 
 Console.Write ("Введите длину массива: ");
 int leng = Convert.ToInt32(Console.ReadLine());
-Console.Write ("Введите начало диапазона чисел в массиве: ");
-int d1 = Convert.ToInt32(Console.ReadLine());
-Console.Write ("конец диапазона: ");
-int d2 = Convert.ToInt32(Console.ReadLine());
+if (leng >= 1)
+{
+   Console.Write ("Введите начало диапазона чисел в массиве: ");
+   int d1 = Convert.ToInt32(Console.ReadLine());
+   Console.Write ("конец диапазона: ");
+   int d2 = Convert.ToInt32(Console.ReadLine());
+   PrintArray (FillArray (leng, d1, d2)); // задаёт массив из leng элементов и выводит их на экран.
+}
+else
+{
+    Console.Write ("Неверная длина массива");
+}
 
-PrintArray (FillArray (leng, d1, d2)); // задаёт массив из leng элементов и выводит их на экран.
